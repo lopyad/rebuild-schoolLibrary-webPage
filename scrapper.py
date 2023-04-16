@@ -44,7 +44,14 @@ def extract_book_list(idx="00"):
       "image" : "None",
       "rental" : "None"
     }
+
+    #추출해서 book에 넣기
     book["title"] = ul_tag.find_element(By.CLASS_NAME, "bd_list_title").text
+    book["author"] = ul_tag.find_element(By.CLASS_NAME, "bd_list_writer").find_element(By.CLASS_NAME, "dd").text
+    book["publisher"] = ul_tag.find_element(By.CLASS_NAME, "bd_list_company").find_element(By.CLASS_NAME, "dd").text
+    book["call_number"] = ul_tag.find_element(By.CLASS_NAME, "bd_list_year").find_element(By.CLASS_NAME, "dd").text
+    book["location"] = ul_tag.find_element(By.CLASS_NAME, "bd_list_location").find_element(By.CLASS_NAME, "dd").text
+    book["rental"] = ul_tag.find_element(By.CLASS_NAME, "rental_box").text
     book["image"] = ul_tag.find_element(By.TAG_NAME, "img").get_attribute("src")
     
     # # "book_image" 클래스에서 이미지 링크 가져오기
