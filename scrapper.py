@@ -86,7 +86,7 @@ def extract_book_list(idx="00"):
     driver.implicitly_wait(5)
     
   # 결과 출력
-  #print(book_data.count)
+  #print(book_data)
   
   # 웹드라이버 종료
   time.sleep(3)
